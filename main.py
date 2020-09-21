@@ -40,12 +40,12 @@ async def stop(ext):
 
 
 @start.error
-async def start_error(ext):
+async def start_error(error, ext):
     await ext.send('fekr kardi man kharam man faqat be admina javab midam na be toie ......')
 
 
 @stop.error
-async def stop_error(ext):
+async def stop_error(error, ext):
     await ext.send('fekr kardi man kharam man faqat be admina javab midam na be toie ......')
 
 

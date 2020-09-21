@@ -20,23 +20,23 @@ async def ping(ext):
 @bot.command()
 @has_permissions(mute_members=True)
 async def start(ext):
-    if ext.author.id == 752517697853718669 and ext.author.voice.channel:
+    if ext.author.voice.channel:
         await ext.author.voice.channel.set_permissions(ext.guild.default_role, speak=False)
         await ext.send(
             'Done! hamaro mute krdm tokhm dary harf bezan kale kiri :red_circle: :angry:')
     else:
-        await ext.send('fekr kardi man kharam man faqat be admina javab midam na be toie ......')
+        await ext.send('koskhol boro too ye voice channel')
 
 
 @bot.command()
 @has_permissions(mute_members=True)
 async def stop(ext):
-    if (ext.author.id == 752517697853718669) and ext.author.voice.channel:
+    if ext.author.voice.channel:
         await ext.author.voice.channel.set_permissions(ext.guild.default_role, speak=None)
         await ext.send(
             'Done! hala mitooni harf bezani kale kiri :red_circle: :angry:')
     else:
-        await ext.send('fekr kardi man kharam man faqat be admina javab midam na be toie ......')
+        await ext.send('koskhol boro too ye voice channel')
 
 
 @start.error

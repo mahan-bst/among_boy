@@ -18,9 +18,9 @@ async def ping(ext):
 
 
 @bot.command()
-@has_permissions(mute_members=True)
+@has_permissions(administrator=True)
 async def start(ext):
-    if ext.author.voice.channel:
+    if ext.author.voice is not None:
         await ext.author.voice.channel.set_permissions(ext.guild.default_role, speak=False)
         await ext.send(
             'Done! hamaro mute krdm tokhm dary harf bezan kale kiri :red_circle: :angry:')
@@ -29,9 +29,9 @@ async def start(ext):
 
 
 @bot.command()
-@has_permissions(mute_members=True)
+@has_permissions(administrator=True)
 async def stop(ext):
-    if ext.author.voice.channel:
+    if ext.author.voice is not None:
         await ext.author.voice.channel.set_permissions(ext.guild.default_role, speak=None)
         await ext.send(
             'Done! hala mitooni harf bezani kale kiri :red_circle: :angry:')
@@ -41,19 +41,12 @@ async def stop(ext):
 
 @start.error
 async def start_error(error, ext):
-    await ext.send('fekr kardi man kharam man faqat be admina javab midam na be toie ......')
+    print(error)
 
 
 @stop.error
 async def stop_error(error, ext):
-    await ext.send('fekr kardi man kharam man faqat be admina javab midam na be toie ......')
+    print(error)
 
 
-@bot.event
-# off caps sensitivity
-async def on_message(message):
-    message.content = message.content.lower().replace(' ', '')
-    await bot.process_commands(message)
-
-
-bot.run(os.environ['token'])
+bot.run('NzU2ODkwMjU3NDg3NjkxODQ3.X2Ya-w.sjC8CVcxPmyWCrzwJT8Zr7Gxxuw')

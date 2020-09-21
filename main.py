@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-API_TOKEN = 'NzU2ODkwMjU3NDg3NjkxODQ3.X2Ya-w.cx0CzdHU3HAyA5rM9D32wpqC9kY'
+import os
 
 
 bot = commands.Bot(command_prefix='?')
@@ -43,4 +43,4 @@ async def on_message(message):
     await bot.process_commands(message)
 
 
-bot.run(API_TOKEN)
+bot.run(os.environ['token'])

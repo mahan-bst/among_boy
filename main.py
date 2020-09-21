@@ -49,4 +49,4 @@ async def stop_error(error, ext):
     print(error)
 
 
-bot.run('NzU2ODkwMjU3NDg3NjkxODQ3.X2Ya-w.sjC8CVcxPmyWCrzwJT8Zr7Gxxuw')
+bot.run(os.environ['token'])

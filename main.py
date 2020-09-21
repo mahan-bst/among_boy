@@ -10,6 +10,7 @@ bot = commands.Bot(command_prefix='?')
 @bot.event
 async def on_ready():
     print('im ready')
+    await bot.change_presence(activity=discord.Game(name="prefix: ?"))
 
 
 @bot.command()
